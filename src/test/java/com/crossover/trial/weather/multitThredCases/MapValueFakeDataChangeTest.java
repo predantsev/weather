@@ -1,7 +1,7 @@
 package com.crossover.trial.weather.multitThredCases;
 
-import com.crossover.trial.weather.multitThredCases.specialTestClasses.SingleThreadMemoryRepository;
-import com.crossover.trial.weather.multitThredCases.specialTestClasses.SingleThreadWeatherServiceImpl;
+import com.crossover.trial.weather.multitThredCases.specialTestClasses.ThreadUnsafeMemoryRepository;
+import com.crossover.trial.weather.multitThredCases.specialTestClasses.ThreadUnsafeWeatherServiceImpl;
 import org.testng.annotations.Test;
 
 /**
@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 public class MapValueFakeDataChangeTest extends AbstractMapValueChangeTest<Integer> {
 
     public MapValueFakeDataChangeTest() {
-        this.memoryRepository = SingleThreadMemoryRepository.getInstance();
-        this.weatherService = SingleThreadWeatherServiceImpl.getInstance();
+        this.memoryRepository = ThreadUnsafeMemoryRepository.getInstance();
+        this.weatherService = ThreadUnsafeWeatherServiceImpl.getInstance();
     }
 
     @Override

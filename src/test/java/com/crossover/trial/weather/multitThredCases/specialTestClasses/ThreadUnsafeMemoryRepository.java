@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by predantsev on 04.12.2016.
  */
-public class SingleThreadMemoryRepository implements Repository<Integer> {
+public class ThreadUnsafeMemoryRepository implements Repository<Integer> {
 
     private final List<AirportData> airportData;
 
@@ -22,13 +22,13 @@ public class SingleThreadMemoryRepository implements Repository<Integer> {
 
     private final Map<Double, Integer> radiusFreq;
 
-    private static final Repository<Integer> INSTANCE = new SingleThreadMemoryRepository();
+    private static final Repository<Integer> INSTANCE = new ThreadUnsafeMemoryRepository();
 
     public static Repository<Integer> getInstance() {
         return INSTANCE;
     }
 
-    private SingleThreadMemoryRepository() {
+    private ThreadUnsafeMemoryRepository() {
         atmosphericInformation = new ArrayList<>();
         requestFrequency = new HashMap<>();
         radiusFreq = new HashMap<>();
