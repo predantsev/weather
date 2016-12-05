@@ -5,18 +5,17 @@ import com.crossover.trial.weather.dto.AtmosphericInformation;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by user on 12/2/2016.
  */
-public interface Repository {
+public interface Repository<T extends Number> {
 
      List<AirportData> getAirportData();
 
      List<AtmosphericInformation> getAtmosphericInformation();
 
-     Map<AirportData, AtomicInteger> getRequestFrequency();
+     Map<AirportData, T> getRequestFrequency();
 
-     Map<Double, AtomicInteger> getRadiusFreq();
+     Map<Double, T> getRadiusFreq();
 }

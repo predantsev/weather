@@ -1,12 +1,10 @@
 package com.crossover.trial.weather.service.impl;
 
 import com.crossover.trial.weather.dto.AirportData;
-import com.crossover.trial.weather.dto.AtmosphericInformation;
 import com.crossover.trial.weather.repository.MemoryRepository;
 import com.crossover.trial.weather.repository.Repository;
 import com.crossover.trial.weather.service.WeatherService;
 
-import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -16,7 +14,7 @@ public class WeatherServiceImpl implements WeatherService {
 
     private static WeatherServiceImpl instance;
 
-    private Repository repository = MemoryRepository.getInstance();
+    private Repository<AtomicInteger> repository = MemoryRepository.getInstance();
 
     private WeatherServiceImpl() {
     }

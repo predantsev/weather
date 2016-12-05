@@ -30,7 +30,7 @@ public class RestWeatherQueryEndpoint implements WeatherQueryEndpoint {
     public final static Logger LOGGER = Logger.getLogger("RestWeatherQueryEndpoint");
 
     private WeatherService weatherService = WeatherServiceImpl.getInstance();
-    private Repository repository = MemoryRepository.getInstance();
+    private Repository<AtomicInteger> repository = MemoryRepository.getInstance();
 
     /** shared gson json to object factory */
     public static final Gson gson = new Gson();

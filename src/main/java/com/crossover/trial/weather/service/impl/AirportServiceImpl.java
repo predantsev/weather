@@ -10,6 +10,8 @@ import com.crossover.trial.weather.repository.Repository;
 import com.crossover.trial.weather.service.AirportService;
 import com.crossover.trial.weather.service.WeatherService;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by user on 11/30/2016.
  */
@@ -28,7 +30,7 @@ public class AirportServiceImpl implements AirportService {
     }
 
     private WeatherService weatherService = WeatherServiceImpl.getInstance();
-    private Repository repository = MemoryRepository.getInstance();
+    private Repository<AtomicInteger> repository = MemoryRepository.getInstance();
 
     /**
      * Update the airports weather data with the collected data.

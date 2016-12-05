@@ -14,14 +14,14 @@ import com.crossover.trial.weather.service.impl.WeatherServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import javax.ws.rs.core.Response;
 import org.junit.Before;
 import org.junit.Test;
 
-
+import javax.ws.rs.core.Response;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
 
@@ -33,7 +33,7 @@ public class WeatherEndpointTest {
 
     private AirportService airportService = AirportServiceImpl.getInstance();
     private WeatherService weatherService = WeatherServiceImpl.getInstance();
-    private Repository repository = MemoryRepository.getInstance();
+    private Repository<AtomicInteger> repository = MemoryRepository.getInstance();
 
     private Gson _gson = new Gson();
 

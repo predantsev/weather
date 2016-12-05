@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by user on 12/2/2016.
  */
-public class MemoryRepository implements Repository{
+public class MemoryRepository implements Repository<AtomicInteger> {
 
     /** all known airports */
     private final List<AirportData> airportData;
@@ -29,9 +29,9 @@ public class MemoryRepository implements Repository{
 
     private final Map<Double, AtomicInteger> radiusFreq;
 
-    private static final Repository INSTANCE = new MemoryRepository();
+    private static final Repository<AtomicInteger> INSTANCE = new MemoryRepository();
 
-    public static Repository getInstance() {
+    public static Repository<AtomicInteger> getInstance() {
         return INSTANCE;
     }
 

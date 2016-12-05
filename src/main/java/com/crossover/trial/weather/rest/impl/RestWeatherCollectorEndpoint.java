@@ -16,6 +16,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 /**
@@ -34,7 +35,7 @@ public class RestWeatherCollectorEndpoint implements WeatherCollectorEndpoint {
 
     private WeatherService weatherService = WeatherServiceImpl.getInstance();
     private AirportService airportService = AirportServiceImpl.getInstance();
-    private Repository repository = MemoryRepository.getInstance();
+    private Repository<AtomicInteger> repository = MemoryRepository.getInstance();
 
     @Override
     public Response ping() {
